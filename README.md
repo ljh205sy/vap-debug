@@ -1,16 +1,16 @@
-## vap-module
+## vap-debug
 
 统一的模块及版本入口，版本统一管理。以免造成版本混乱及版本不归一情况。
 
 ## 开发遵循规范
 ### 版本号统一管理，不依赖各个模块去管理依赖版本号。如需要升级，做统一升级管理，以免造成版本混乱和不一致
-- vap-service
-- vap-utils
+- vap-service                          所有服务引用该模块
+- vap-mybatis                          mybatis使用统一封装
 - vap-common
-- vap-syslog
-- vap-swagger2-spring-boot-starter
-- vap-redis-spring-boot-starter
-- vap-prometheus-spring-boot-starter
+- vap-swagger2-spring-boot-starter     swagger接口文档
+- vap-redis-spring-boot-starter        redis组件封装
+- vap-prometheus-spring-boot-starter   prometheus监控
+- api-services  所有服务路径
 
 
 ### 需要引入spring-boot 与 spring-cloud、 aliba-could 整合组件
