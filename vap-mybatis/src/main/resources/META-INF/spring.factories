@@ -1,0 +1,5 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.vrv.vap.mybatis.config.DruidDataSourceAutoConfigure,\
+com.vrv.vap.mybatis.config.MapperScanConfig,\
+com.vrv.vap.mybatis.config.DruidProperties,\
+com.vrv.vap.mybatis.config.TransactionConfiguration

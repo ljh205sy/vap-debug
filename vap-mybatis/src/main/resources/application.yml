@@ -1,0 +1,22 @@
+mapper:
+  identity: MYSQL
+  mappers: com.vrv.vap.mybatis.baseMapper.BaseBatisMapper
+  not-empty: false
+
+mybatis:
+  configuration:
+    aggressive-lazy-loading: false
+    lazy-load-trigger-methods: equals,clone,hashCode
+    lazy-loading-enabled: true
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.vrv.vap.*.entity,;com.vrv.vap.*.model
+pagehelper:
+  helperDialect: mysql
+  params: count=countSql
+  reasonable: true
+  supportMethodsArguments: true
+restart:
+  include:
+    mapper: /mapper-[\w-\.]+jar
+    pagehelper: /pagehelper-[\w-\.]+jar
+
