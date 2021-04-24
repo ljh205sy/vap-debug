@@ -6,7 +6,7 @@ package com.vrv.vap.common.utils;
  *
  * @author find
  */
-public interface IResultCode {
+public interface IResult {
     Integer getCode();
 
     String getMessage();

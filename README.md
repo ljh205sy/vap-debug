@@ -64,9 +64,6 @@ Spring Cloud | 版本号：Hoxton.SR9
 Alibaba Cloud | 集成alibaba Cloud，版本号：2.2.5.RELEASE
 
 
-<spring-cloud-alibaba-dependencies.version>2.2.5.RELEASE</spring-cloud-alibaba-dependencies.version>
-<spring-boot-dependencies.version>2.3.8.RELEASE</spring-boot-dependencies.version>
-<spring-cloud-dependencies.version>Hoxton.SR9</spring-cloud-dependencies.version>
 
 
 

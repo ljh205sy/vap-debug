@@ -6,7 +6,7 @@ package com.vrv.vap.common.utils;
  *
  * @author find
  */
-public enum ResultEnum implements IResultCode {
+public enum ResultEnum implements IResult {
     Field_VALIDATE_ERROR(-3, "字段验证错误"),
     FORM_VALIDATE_ERROR(-2, "表单验证错误"),
     UNKNOW_FAILED(-1, "服务器异常"),

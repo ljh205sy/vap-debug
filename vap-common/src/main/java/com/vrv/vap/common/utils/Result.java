@@ -11,7 +11,7 @@ import lombok.Data;
  * @author find
  */
 @Data
-public class Result<T> implements IResultCode {
+public class Result<T> implements IResult {
     private Integer code;
     private String message;
     private T data;

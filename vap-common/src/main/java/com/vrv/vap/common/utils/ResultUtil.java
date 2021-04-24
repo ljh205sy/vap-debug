@@ -26,7 +26,7 @@ public class ResultUtil {
         return result;
     }
 
-    public static <T> Result<T> error(IResultCode result) {
+    public static <T> Result<T> error(IResult result) {
 
         return error(result.getCode(), result.getMessage());
     }
