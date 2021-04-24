@@ -51,5 +51,22 @@
   </dependency>
 ~~~~
 
+# 2021年4月24日17:08:01
+1.针对单数据源的封装，多数据源动态设置后续在加
+2.升级springboot、springcloud、spring alibaba cloud版本
+3.技术栈
+所需技能|技能
+--| -- |
+Java | 基础
+Maven | 文章涉及到大量的代码，均使用Maven构建
+Spring Boot |  微服务脚手架，版本号2.3.8.RELEASE
+Spring Cloud | 版本号：Hoxton.SR9
+Alibaba Cloud | 集成alibaba Cloud，版本号：2.2.5.RELEASE
+
+
+<spring-cloud-alibaba-dependencies.version>2.2.5.RELEASE</spring-cloud-alibaba-dependencies.version>
+<spring-boot-dependencies.version>2.3.8.RELEASE</spring-boot-dependencies.version>
+<spring-cloud-dependencies.version>Hoxton.SR9</spring-cloud-dependencies.version>
+
 
 
