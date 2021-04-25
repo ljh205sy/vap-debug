@@ -2,7 +2,7 @@ package com.vrv.vap.common.aop;
 
 import com.vrv.vap.common.annotation.DataSource;
 import com.vrv.vap.common.config.DynamicDataSourceHelper;
-import com.vrv.vap.common.service.DataSourceNames;
+import com.vrv.vap.common.service.DataSourceType;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -17,6 +17,7 @@ import java.lang.reflect.Method;
 
 /**
  * 多数据源，切面处理类
+ *
  * @author wh1107066
  */
 @Aspect
@@ -24,24 +25,25 @@ import java.lang.reflect.Method;
 public class DataSourceAspect implements Ordered {
     protected Logger logger = LoggerFactory.getLogger(getClass());
 
-    @Pointcut("@annotation(com.vrv.vap.common.annotation.DataSource)")
+    /**
+     * 选择切入点为DataSource注解
+     */
+    @Pointcut("@annotation(com.vrv.vap.common.annotation.DataSource)" +
+            " || @within(com.vrv.vap.common.annotation.DataSource)")
     public void dataSourcePointCut() {
     }
 
     @Around("dataSourcePointCut()")
     public Object around(ProceedingJoinPoint point) throws Throwable {
-        MethodSignature signature = (MethodSignature) point.getSignature();
-        Method method = signature.getMethod();
-
-        DataSource ds = method.getAnnotation(DataSource.class);
-        if(ds == null){
+        DataSource dataSource = getDataSource(point);
+        if (dataSource == null) {
             //如果不存在是直接走的master主库
-            DynamicDataSourceHelper.setDataSourceType(DataSourceNames.FIRST);
-            logger.info("设置数据源set datasource is " + DataSourceNames.FIRST);
-        }else {
+            DynamicDataSourceHelper.setDataSourceType(DataSourceType.MASTER.name());
+            logger.info("设置数据源set datasource is " + DataSourceType.MASTER);
+        } else {
             // 如果不为空，从注解中获取是走主库还是从库
-            DynamicDataSourceHelper.setDataSourceType(ds.name());
-            logger.info("设置数据源set datasource is " + ds.name());
+            DynamicDataSourceHelper.setDataSourceType(dataSource.value().name());
+            logger.info("设置数据源set datasource is " + dataSource.value());
         }
 
         try {
@@ -49,6 +51,22 @@ public class DataSourceAspect implements Ordered {
         } finally {
             DynamicDataSourceHelper.clearDataSourceType();
             logger.info("clean datasource");
+        }
+    }
+
+    /**
+     * 获取需要切换的数据源
+     */
+    public DataSource getDataSource(ProceedingJoinPoint point) {
+        MethodSignature signature = (MethodSignature) point.getSignature();
+        Class<? extends Object> targetClass = point.getTarget().getClass();
+        DataSource targetDataSource = targetClass.getAnnotation(DataSource.class);
+        if (targetDataSource != null) {
+            return targetDataSource;
+        } else {
+            Method method = signature.getMethod();
+            DataSource dataSource = method.getAnnotation(DataSource.class);
+            return dataSource;
         }
     }
 

@@ -3,7 +3,7 @@ package com.vrv.vap.common.service.impl;
 import com.vrv.vap.common.annotation.DataSource;
 import com.vrv.vap.common.dao.SysUserDao;
 import com.vrv.vap.common.entity.SysUser;
-import com.vrv.vap.common.service.DataSourceNames;
+import com.vrv.vap.common.service.DataSourceType;
 import com.vrv.vap.common.service.SysUserService;
 import org.springframework.stereotype.Service;
 
@@ -28,7 +28,7 @@ public class SysUserServiceImpl implements SysUserService {
      * @return 实例对象
      */
     @Override
-    @DataSource(name = DataSourceNames.FIRST)
+    @DataSource(value = DataSourceType.MASTER)
     public SysUser queryById(Integer id) {
         return this.sysUserDao.queryById(id);
     }
@@ -41,6 +41,7 @@ public class SysUserServiceImpl implements SysUserService {
      * @return 对象列表
      */
     @Override
+    @DataSource(value = DataSourceType.SLAVE)
     public List<SysUser> queryAllByLimit(int offset, int limit) {
         return this.sysUserDao.queryAllByLimit(offset, limit);
     }

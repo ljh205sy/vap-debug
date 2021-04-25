@@ -1,5 +1,7 @@
 package com.vrv.vap.common.annotation;
 
+import com.vrv.vap.common.service.DataSourceType;
+
 import java.lang.annotation.*;
 
 /**
@@ -11,5 +13,5 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface DataSource {
-    String name() default "";
+    DataSourceType value() default DataSourceType.MASTER;
 }

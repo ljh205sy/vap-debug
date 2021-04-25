@@ -32,4 +32,12 @@ public class SysUserController {
         return this.sysUserService.queryById(id);
     }
 
+
+//    /* 方法注解 */
+//    @ApiOperation(value = "方法名:打招呼", notes = "打招呼方法的测试")
+//    @GetMapping("/hello")
+//    public String sayHello(/* 参数注解 */ @ApiParam(value = "参数:名字" , required=true ) @RequestParam String name){
+//        return "hi"+name+",I can say hello";
+//    }
+
 }

@@ -1,6 +1,6 @@
 
-CREATE DATABASE /*!32312 IF NOT EXISTS*/`usercenter` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `usercenter`;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`master` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `master`;
 DROP TABLE IF EXISTS `sys_user`;
 CREATE TABLE `sys_user` (
                             `id` int(11) NOT NULL AUTO_INCREMENT,
