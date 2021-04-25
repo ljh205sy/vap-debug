@@ -7,7 +7,6 @@
         <artifactId>api-services</artifactId>
         <version>0.0.1</version>
     </parent>
-    <groupId>com.vrv.vap</groupId>
     <artifactId>api-admin</artifactId>
     <version>0.0.1</version>
     <name>api-admin</name>

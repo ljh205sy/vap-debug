@@ -6,8 +6,7 @@
     <parent>
         <artifactId>vap-debug</artifactId>
         <groupId>com.vrv.vap</groupId>
-        <version>3.0</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <version>0.0.1</version>
     </parent>
 
     <artifactId>vap-service</artifactId>

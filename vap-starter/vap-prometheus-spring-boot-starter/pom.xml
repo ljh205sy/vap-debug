@@ -4,13 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.vrv.vap</groupId>
-        <artifactId>vap-bug</artifactId>
-        <version>3.0</version>
+        <artifactId>vap-debug</artifactId>
+        <version>0.0.1</version>
     </parent>
-
-    <groupId>com.vrv.vap</groupId>
     <artifactId>vap-prometheus-spring-boot-starter</artifactId>
-    <version>3.0</version>
+    <version>0.0.1</version>
     <name>vap-prometheus-spring-boot-starter</name>
 
     <properties>
