@@ -1,9 +1,14 @@
 package com.vrv.vap.consumer;
 
+import com.vrv.vap.vapservice.EnableRyFeignClients;
+import com.vrv.vap.vapservice.VapCloudApplication;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
+/**
+ * @author wh1107066
+ */
+@VapCloudApplication
+@EnableRyFeignClients
 public class ApiConsumerApplication {
 
     public static void main(String[] args) {

@@ -1,0 +1,43 @@
+server:
+  port: 19090
+spring:
+  datasource:
+    username: ${MYSQL_USER:root}
+    password: ${MYSQL_PASSWORD:123456}
+    url: jdbc:mysql://${MYSQL_HOST:127.0.0.1}:${MYSQL_PORT:3306}/usercenter?useUnicode=true&useSSL=false&characterEncoding=UTF-8&serverTimezone=GMT%2B8
+    druid:
+      # master datasource, https://github.com/alibaba/druid/tree/master/druid-spring-boot-starter
+      filters: stat,wall,slf4j
+      maxActive: 10
+      initialSize: 1
+      maxWait: 10000
+      minIdle: 1
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+      maxEvictableIdleTimeMillis: 400000
+      validationQuery: select 'x'
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      poolPreparedStatements: true
+      maxOpenPreparedStatements: 20
+      filter:
+        stat:
+          slow-sql-millis: 3000
+          log-slow-sql: true
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /druid/*
+        reset-enable: false
+        login-username: vap
+        login-password: vap
+      web-stat-filter:
+        url-pattern: /*
+        exclusions: '*.js,*.gif,*.jpg,*.png,*.css,*.ico,/admin/druid/*'
+
+
+logging:
+  level:
+    com.vrv.vap: info
+    root: info
+    com.alibaba.nacos: ERROR

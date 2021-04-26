@@ -7,9 +7,9 @@
         <artifactId>vap-debug</artifactId>
         <version>0.0.1</version>
     </parent>
-    <artifactId>vap-common</artifactId>
+    <artifactId>vap-dynamicDs</artifactId>
     <version>0.0.1</version>
-    <name>vap-common</name>
+    <name>vap-dynamicDs</name>
     <properties>
         <java.version>1.8</java.version>
     </properties>

@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.Enumeration;
 
 /**
- * Fegin接口调用时，主动在头部塞入用户信息
+ * Fegin接口调用时，主动在头部塞入用户信息，只要是feign接口调用，携带header的config的配置就会存在这个打印信息。
  *
  * @author liujinhui
  * date 2021/4/26 18:04

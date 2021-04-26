@@ -1,0 +1,6 @@
+spring:
+ application:
+    name:  api-consumer
+ profiles:
+   active: dev
+
