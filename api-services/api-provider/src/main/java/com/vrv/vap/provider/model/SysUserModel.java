@@ -7,7 +7,7 @@ import java.util.Date;
  * @author wh1107066
  */
 @Table(name = "sys_user")
-public class SysUser {
+public class SysUserModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

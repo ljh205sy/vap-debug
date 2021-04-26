@@ -20,7 +20,7 @@
         </dependency>
         <dependency>
             <groupId>com.vrv.vap</groupId>
-            <artifactId>vap-common</artifactId>
+            <artifactId>api-core</artifactId>
         </dependency>
         <dependency>
             <groupId>com.vrv.vap</groupId>
@@ -55,7 +55,6 @@
         <dependency>
             <groupId>org.mybatis.generator</groupId>
             <artifactId>mybatis-generator-core</artifactId>
-            <version>1.3.5</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

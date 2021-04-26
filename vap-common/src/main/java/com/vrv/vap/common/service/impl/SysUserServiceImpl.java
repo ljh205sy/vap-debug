@@ -28,7 +28,7 @@ public class SysUserServiceImpl implements SysUserService {
      * @return 实例对象
      */
     @Override
-    @DataSource(value = DataSourceType.MASTER)
+    @DataSource(value = DataSourceType.SLAVE)
     public SysUser queryById(Integer id) {
         return this.sysUserDao.queryById(id);
     }

@@ -1,9 +1,12 @@
 package com.vrv.vap.admin;
 
+import com.vrv.vap.vapservice.VapCloudApplication;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
+/**
+ * @author wh1107066
+ */
+@VapCloudApplication
 public class ApiAdminApplication {
 
     public static void main(String[] args) {

@@ -71,21 +71,10 @@ zuul:
       path: /login/
       url: ${WEBAPP:http://localhost:9999/}
       stripPrefix: false
-    app-search:
-      path: /search/**
-      url: ${WEBAPP:http://localhost:9999/}
-      stripPrefix: false
-    api-asset:
-      path: /api-asset/**
-      serviceId: api-asset
+    api-provider:
+      path: /api-provider/**
+      serviceId: api-provider
       sensitiveHeaders: null
-    server-fileupload:
-      path: /api-fileup/**
-      serviceId: server-fileupload
-    api-situation:
-      path: /api-situation/**
-      serviceId: api-situation
-      sensitiveHeaders:
 info:
   app:
     name: "api-zuul"

@@ -11,7 +11,7 @@
     <modules>
         <module>vap-mybatis</module>
         <module>vap-starter</module>
-        <module>vap-service</module>
+<!--        <module>vap-service</module>-->
         <module>vap-common</module>
     </modules>
     <properties>
@@ -36,6 +36,7 @@
         <mapper-spring-boot.version>2.1.5</mapper-spring-boot.version>         <!--更新-->
         <pagehelper-spring-boot.version>1.3.0</pagehelper-spring-boot.version> <!--更新-->
         <mapper.version>4.1.5</mapper.version>
+        <mybatis-generator.version>1.3.5</mybatis-generator.version>
         <druid.version>1.2.6</druid.version>
         <mybatis-spring-boot-starter.version>1.3.2</mybatis-spring-boot-starter.version>
 
@@ -73,6 +74,7 @@
         <poi-ooxml.version>5.0.0</poi-ooxml.version>
         <!-- vap服务依赖 -->
         <vap-service.version>0.0.1</vap-service.version>
+        <api-core.version>0.0.1</api-core.version>
         <vap-mybatis.version>0.0.1</vap-mybatis.version>
         <vap-common.version>0.0.1</vap-common.version>
         <vap-swagger2.version>3.0</vap-swagger2.version>
@@ -201,6 +203,11 @@
                 <groupId>tk.mybatis</groupId>
                 <artifactId>mapper</artifactId>
                 <version>${mapper.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis.generator</groupId>
+                <artifactId>mybatis-generator-core</artifactId>
+                <version>${mybatis-generator.version}</version>
             </dependency>
 
             <!--常用工具类 -->
@@ -337,8 +344,8 @@
 
             <!-- mybatis 统一封装 -->
             <dependency>
-                <artifactId>vap-mybatis</artifactId>
                 <groupId>com.vrv.vap</groupId>
+                <artifactId>vap-mybatis</artifactId>
                 <version>${vap-mybatis.version}</version>
             </dependency>
 
@@ -348,6 +355,12 @@
                 <artifactId>vap-service</artifactId>
                 <version>${vap-service.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.vrv.vap</groupId>
+                <artifactId>api-core</artifactId>
+                <version>${api-core.version}</version>
+            </dependency>
+
             <dependency>
                 <groupId>com.vrv.vap</groupId>
                 <artifactId>vap-swagger2-spring-boot-starter</artifactId>

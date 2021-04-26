@@ -1,14 +1,15 @@
 package com.vrv.vap.provider;
 
+import com.vrv.vap.vapservice.EnableRyFeignClients;
+import com.vrv.vap.vapservice.VapCloudApplication;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
  * @author wh1107066
  */
-@SpringBootApplication
-@EnableDiscoveryClient
+
+@VapCloudApplication
+@EnableRyFeignClients
 public class ApiProviderApplication {
 
     public static void main(String[] args) {

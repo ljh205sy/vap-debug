@@ -10,11 +10,11 @@ spring:
         server-addr: ${NACOS_HOST:127.0.0.1}:${NACOS_PORT:8848} # nacos服务注册地址
         register-enabled: true # 是否注册到注册中心上，默认true，若为false则不会注册到注册中心，但是可以从注册中心获取服务列表
         namespace: ${spring.profiles.active}   # 命名空间,
-        group: nacos-dev                      # 分组
+        group: DEFAULT_GROUP                      # 分组
       config:
         server-addr: ${spring.cloud.nacos.discovery.server-addr}  # 配置中心地址
         namespace: ${spring.cloud.nacos.discovery.namespace}      # 命名空间
-        group: nacos-dev                                         # 分组
+        group: DEFAULT_GROUP                                       # 分组
         # dataId完整格式: ${prefix}-${spring.profiles.active}.${file-extension}
         prefix: ${spring.application.name}  # 默认为`spring.application.name`的值
         file-extension: yml                 # 配置文件格式

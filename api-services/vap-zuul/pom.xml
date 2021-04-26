@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.vrv.vap</groupId>
-        <artifactId>vap-debug</artifactId>
+        <artifactId>api-services</artifactId>
         <version>0.0.1</version>
     </parent>
     <artifactId>vap-zuul</artifactId>
@@ -20,41 +20,35 @@
     <dependencies>
         <!-- 注册中心与配置中心依赖 -->
         <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+            <groupId>com.vrv.vap</groupId>
+            <artifactId>vap-service</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+            <groupId>com.vrv.vap</groupId>
+            <artifactId>api-core</artifactId>
         </dependency>
-
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-configuration-processor</artifactId>
-            <optional>true</optional>
+            <groupId>com.vrv.vap</groupId>
+            <artifactId>vap-prometheus-spring-boot-starter</artifactId>
         </dependency>
-        <!-- spring cloud模块依赖 -->
+        <dependency>
+            <groupId>com.vrv.vap</groupId>
+            <artifactId>vap-swagger2-spring-boot-starter</artifactId>
+        </dependency>
+        <!-- redis封装库 -->
+        <dependency>
+            <groupId>com.vrv.vap</groupId>
+            <artifactId>vap-redis-spring-boot-starter</artifactId>
+        </dependency>
+        <!-- zuul网关依赖  -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
-        </dependency>
-
-        <!--web 模块 -->
-        <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
         </dependency>
 
         <dependency>
@@ -72,15 +66,6 @@
             <artifactId>commons-lang3</artifactId>
         </dependency>
 
-        <!-- session共享 -->
-        <dependency>
-            <groupId>org.springframework.session</groupId>
-            <artifactId>spring-session-core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.session</groupId>
-            <artifactId>spring-session-data-redis</artifactId>
-        </dependency>
 
         <!-- JSON工具类 -->
         <dependency>
@@ -96,11 +81,7 @@
             <artifactId>jackson-annotations</artifactId>
         </dependency>
 
-        <!-- redis封装库 -->
-        <dependency>
-            <groupId>com.vrv.vap</groupId>
-            <artifactId>vap-redis-spring-boot-starter</artifactId>
-        </dependency>
+
 
         <!-- 使用okhttp -->
         <dependency>
@@ -134,6 +115,13 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

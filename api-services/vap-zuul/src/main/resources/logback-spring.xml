@@ -5,7 +5,7 @@
 <!-- debug:当此属性设置为true时，将打印出logback内部日志信息，实时查看logback运行状态。默认值为false。 -->
 <configuration scan="true" scanPeriod="60 seconds"
                debug="false">
-  <contextName>server-zuul</contextName>
+  <contextName>vap-zuul</contextName>
 
   <!-- <springProperty scope="context" name="logPath" source="logging.path"
       defaultValue="logs"/> -->
@@ -186,9 +186,10 @@
   <!-- 4. 最终的策略 -->
   <!-- 4.1 开发环境:打印控制台 -->
   <springProfile name="dev">
-    <root level="debug">
+    <root level="info">
       <appender-ref ref="CONSOLE" />
       <appender-ref ref="DEBUG_FILE" />
+      <appender-ref ref="INFO_FILE" />
     </root>
   </springProfile>
 
