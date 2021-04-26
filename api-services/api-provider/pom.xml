@@ -14,18 +14,24 @@
         <java.version>1.8</java.version>
     </properties>
     <dependencies>
+        <!-- 多模块依赖 -->
         <dependency>
             <groupId>com.vrv.vap</groupId>
             <artifactId>vap-service</artifactId>
         </dependency>
+
+        <!-- 通用核心库包 -->
         <dependency>
             <groupId>com.vrv.vap</groupId>
             <artifactId>api-core</artifactId>
         </dependency>
+
+        <!-- 单数据库使用 -->
         <dependency>
             <groupId>com.vrv.vap</groupId>
             <artifactId>vap-mybatis</artifactId>
         </dependency>
+
         <!-- prometheus 监控 -->
         <dependency>
             <groupId>com.vrv.vap</groupId>
